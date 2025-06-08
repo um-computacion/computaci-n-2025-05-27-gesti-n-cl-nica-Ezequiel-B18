@@ -34,4 +34,4 @@ class Medico:
         if self.__especialidades:
             nombres_esp = [esp.obtener_especialidad() for esp in self.__especialidades]
             especialidades_str = f" - Especialidades: {', '.join(nombres_esp)}"
-        return f"Dr. {self.__nombre}, Matricula: {self.__matricula}, {especialidades_str}"
+        return f"Dr. {self.__nombre}, Matricula: {self.__matricula}{especialidades_str}"

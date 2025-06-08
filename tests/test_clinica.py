@@ -12,7 +12,6 @@ from src.exceptions import (
     RecetaInvalidaException
 )
 
-
 class TestClinica(unittest.TestCase):
     
     def setUp(self):
@@ -98,6 +97,17 @@ class TestClinica(unittest.TestCase):
         with self.assertRaises(TurnoOcupadoException):
             self.clinica.agendar_turno("87654321", "MAT12345", "Pediatría", self.fecha_lunes)
     
+    def test_error_turno_fecha_pasada(self):
+        self.clinica.agregar_paciente(self.paciente1)
+        self.clinica.agregar_medico(self.medico1)
+        
+        fecha_pasada = datetime(2024, 1, 1, 10, 0)
+        
+        with self.assertRaises(ValueError) as context:
+            self.clinica.agendar_turno("12345678", "MAT12345", "Pediatría", fecha_pasada)
+        
+        self.assertIn("pasado", str(context.exception).lower())
+
     def test_error_turno_paciente_inexistente(self):
         self.clinica.agregar_medico(self.medico1)
         
