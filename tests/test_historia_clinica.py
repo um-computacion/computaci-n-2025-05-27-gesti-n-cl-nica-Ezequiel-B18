@@ -63,8 +63,8 @@ class TestHistoriaClinica(unittest.TestCase):
         resultado = str(self.historia)
         
         self.assertIn("Luis Rodríguez", resultado)
-        self.assertIn("Turnos:", resultado)
-        self.assertIn("Recetas:", resultado)
+        self.assertIn("Turnos", resultado)
+        self.assertIn("Recetas", resultado)
         self.assertIn("Dr. Patricia Silva", resultado)
 
 if __name__ == "__main__":

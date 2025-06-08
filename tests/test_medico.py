@@ -12,7 +12,7 @@ class TestMedico(unittest.TestCase):
         medico = Medico("Dr. Juan Pepito", "MAT12345")
 
         self.assertEqual(medico.obtener_matricula(), "MAT12345")
-        self.assertIn("Dr Juan Pepito", str(medico))
+        self.assertIn("Dr. Juan Pepito", str(medico))
         self.assertIn("MAT12345", str(medico))
 
     def test_agregar_especialidad(self):
