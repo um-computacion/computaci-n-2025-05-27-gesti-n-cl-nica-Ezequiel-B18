@@ -47,7 +47,7 @@ class TestEspecialidad(unittest.TestCase):
         self.assertTrue(especialidad1.verificar_dia("miercoles"))
         self.assertTrue(especialidad2.verificar_dia("miercoles"))
 
-    def test_str_representation(self):
+    def test_str(self):
         especialidad = Especialidad("Traumatologia", ["lunes", "miercoles"])
         resultado = str(especialidad)
 
