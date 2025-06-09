@@ -76,6 +76,8 @@ class Clinica:
         self.validar_existencia_medico(matricula)
         medico = self.__medicos[matricula]
 
+        self.validar_fecha_no_pasada(fecha_hora)
+
         dia_semana = self.obtener_dia_semana_español(fecha_hora)
         
         self.validar_especialidad_en_dia(medico, especialidad, dia_semana)
@@ -99,6 +101,11 @@ class Clinica:
     def obtener_dia_semana_español(self, fecha_hora):
         dias = ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"]
         return dias[fecha_hora.weekday()]
+    
+    def validar_fecha_no_pasada(self, fecha_hora):
+        if fecha_hora < datetime.now():
+            fecha_str = fecha_hora.strftime("%d/%m/%Y %H:%M")
+            raise ValueError(f"No se puede agendar un turno en el pasado: {fecha_str}")
 
     def validar_especialidad_en_dia(self, medico, especialidad_solicitada, dia_semana):
         especialidad_disponible = medico.obtener_especialidad_para_dia(dia_semana)
@@ -110,7 +117,7 @@ class Clinica:
         
         if especialidad_disponible.lower() != especialidad_solicitada.lower():
             raise MedicoNoDisponibleException(
-                f"El medico no atiende {especialidad_solicitada} los dias {dia_semana}"
+                f"El medico no atiende {especialidad_solicitada} los dias {dia_semana}\n"
                 f"Atiende: {especialidad_disponible}"
             )
         
