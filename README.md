@@ -1,11 +1,45 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/y_fEcNZn)
 # 🏥 Sistema de Gestión para una Clínica
 
 ## 👤 Información del Alumno
 
 ### 📋 Datos Personales
-- **Nombre y Apellido**: [Completar con nombre y apellido]
+- **Nombre y Apellido**: Ezequiel Blajevitch
 - **Ciclo Lectivo**: 2025
-- **Carrera**: [Completar con nombre de la carrera]
+- **Carrera**: Ingeniería en Informatica
+
+## Cómo ejecutar el sistema
+
+```bash
+# Ejecutar la aplicación
+python main.py
+
+# Ejecutar todas las pruebas
+python -m unittest discover tests -v
+```
+## Explicación de diseño general
+
+### Arquitectura
+El sistema implementa una **arquitectura en capas** con separación clara de responsabilidades:
+
+- **Modelos** (`src/models/`): Tiene las clases y validaciones
+- **Interfaz por consola** (`src/cli.py`): Maneja la interacción con el usuario  
+- **Excepciones** (`src/exceptions.py`): Manejo de exceptions
+- **Pruebas** (`tests/`): Los tests
+
+### Características técnicas
+- **Validaciones centralizadas** en los models para no tener todo en el CLI
+- **Excepciones personalizadas** para distintos tipos de errores
+- **Búsquedas** usando diccionarios manejandose con DNI o Matricula
+- **Copias de listas** para evitar sobreescribir datos importantes o borrarlas 
+- **Historia clínica automática** al registrar pacientes
+
+### Flujo de operaciones
+1. El CLI solicita datos al usuario
+2. Crea objetos del modelo con validaciones automáticas
+3. La clase Clinica coordina las operaciones del sistema
+4. Se manejan errores mediante excepciones específicas
+5. El CLI muestra resultados o mensajes de error
 
 ## ⏰ Información Importante sobre la Entrega
 
