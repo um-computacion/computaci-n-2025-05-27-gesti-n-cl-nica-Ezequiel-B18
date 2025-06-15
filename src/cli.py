@@ -146,7 +146,7 @@ class CLI:
         try:
             dni = input("DNI: ").strip()
             matricula = input("Matricula medico: ").strip()
-            especialidad = input("Especialidad solicitada: ").strip()
+            especialidad = input("Especialidad solicitada: ").strip().lower()
 
             fecha_str = input("Fecha del turno (dd/mm/aaaa): ").strip()
             hora_str = input("Hora del turno (HH:MM): ").strip()

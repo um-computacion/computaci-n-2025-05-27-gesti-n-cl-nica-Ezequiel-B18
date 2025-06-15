@@ -24,7 +24,7 @@ class Clinica:
 
     def agregar_paciente(self, paciente):
         if not isinstance(paciente, Paciente):
-            raise ValueError("Debe proporcionar un objeto Paciente valido")
+            raise ValueError("Debe proporcionar un Paciente valido")
         
         dni = paciente.obtener_dni()
 
@@ -45,7 +45,7 @@ class Clinica:
 
     def agregar_medico(self, medico):
         if not isinstance(medico, Medico):
-            raise ValueError("Debe proporcionar un objeto medico valido")
+            raise ValueError("Debe proporcionar un Medico valido")
         
         matricula = medico.obtener_matricula()
 

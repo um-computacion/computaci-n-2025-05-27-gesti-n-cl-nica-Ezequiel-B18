@@ -2,7 +2,7 @@ from datetime import datetime
 
 class Paciente:
     def __init__(self, nombre, dni, fecha_nacimiento):
-        # Validaciones 
+    
         if not nombre or not nombre.strip():
             raise ValueError("El nombre no debe estar vacio")
         if not dni or not dni.strip():
