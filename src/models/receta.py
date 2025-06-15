@@ -7,11 +7,11 @@ class Receta:
         if paciente is None:
             raise ValueError("El paciente no debe ser None")
         if not isinstance(paciente, Paciente):
-            raise ValueError("Debe proporcionar un objeto Paciente valido")
+            raise ValueError("Debe proporcionar un Paciente valido")
         if medico is None:
             raise ValueError("El medico no debe ser None")
         if not isinstance(medico, Medico):
-            raise ValueError("Debe proporcionar un objeto Medico Valido")
+            raise ValueError("Debe proporcionar un Medico valido")
         if medicamentos is None:
             raise ValueError("La lista de meds no debe ser None")
         if not medicamentos:

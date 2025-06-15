@@ -7,15 +7,15 @@ class Turno:
         if paciente is None:
             raise ValueError("El paciente no puede ser None")
         if not isinstance(paciente, Paciente):
-            raise ValueError("Debe proporcionar un objeto Paciente valido")
+            raise ValueError("Debe proporcionar un Paciente valido")
         if medico is None:
             raise ValueError("El medico no puede ser None")
         if not isinstance(medico, Medico):
-            raise ValueError("Debe proporcionar un objeto Medico valido")
+            raise ValueError("Debe proporcionar un Medico valido")
         if fecha_hora is None:
             raise ValueError("La fecha y hora no pueden ser None")
         if not isinstance(fecha_hora, datetime):
-            raise ValueError("Debe proporcionar un objeto datetime valido")
+            raise ValueError("Debe proporcionar una fecha valida yyyy/mm/dd")
         if not especialidad or not especialidad.strip():
             raise ValueError("La especialidad no debe estar vacia")
         

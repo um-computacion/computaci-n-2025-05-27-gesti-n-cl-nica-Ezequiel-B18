@@ -7,7 +7,7 @@ class HistoriaClinica:
         if paciente is None:
             raise ValueError("El paciente no debe ser None")
         if not isinstance(paciente, Paciente):
-            raise ValueError("Debe proporcionar un objeto Paciente valido")
+            raise ValueError("Debe proporcionar un paciente valido")
         
         self.__paciente = paciente
         self.__turnos = []
@@ -17,7 +17,7 @@ class HistoriaClinica:
         if turno is None:
             raise ValueError("El turno no puede ser None")
         if not isinstance(turno, Turno):
-            raise ValueError("Debe proporcionar un objeto Turno valido")
+            raise ValueError("Debe proporcionar un turno valido")
         
         self.__turnos.append(turno)
 
@@ -25,7 +25,7 @@ class HistoriaClinica:
         if receta is None:
             raise ValueError("La receta no debe ser None")
         if not isinstance(receta, Receta):
-            raise ValueError("Debe proporcionar un objeto Receta valido")
+            raise ValueError("Debe proporcionar una Receta valida")
         
         self.__recetas.append(receta)
     
